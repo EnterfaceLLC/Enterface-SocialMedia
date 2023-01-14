@@ -1,3 +1,5 @@
+import { TextStyle } from 'react-native';
+
 const size = {
   caption: 10,
   norm: 14,
@@ -7,7 +9,7 @@ const size = {
   heading: 30,
 };
 
-const weight = {
+const weight: { [key: string]: TextStyle['fontWeight'] } = {
   thin: '400',
   norm: 'normal',
   semi: '600',

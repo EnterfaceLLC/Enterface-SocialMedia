@@ -1,18 +1,19 @@
-import { View, Text } from 'react-native';
-import colors from './src/theme/colors';
-import font from './src/theme/fonts';
-
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import { View, StyleSheet, ScrollView } from 'react-native';
+import FeedPost from './src/components/FeedPost';
 
 const App = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style={{ fontSize: font.size.body, color: colors.primary }}>
-        Enterface Social Media
-      </Text>
-      <AntDesign name='dashboard' size={40} color={colors.tertairy} />
-    </View>
+    <ScrollView style={styles.app}>
+      <FeedPost />
+      <FeedPost />
+    </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  app: {
+    flex: 1,
+  },
+});
 
 export default App;
