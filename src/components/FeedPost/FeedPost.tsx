@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import { Text, View, Image } from 'react-native';
-// import Interface from 'react';
 
 import Comment from '../Comment';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -19,12 +19,12 @@ interface IFeedPost {
 const FeedPost = ({ post }: IFeedPost) => {
   // console.log(post);
   return (
-    <View style={styles.post}>
+    <View style={styles.postC}>
       {/* HEADER */}
       <View style={styles.header}>
         <Image
           style={styles.avatar}
-          source={post.user.image}
+          source={{ uri: post.user.image, }}
         />
         <Text style={styles.username}>{post.user.username}</Text>
         <Entypo name='dots-three-horizontal' style={styles.dots} size={24} />
@@ -70,7 +70,7 @@ const FeedPost = ({ post }: IFeedPost) => {
 
         <Text style={styles.txt}> Liked by <Text style={styles.inline}>@LowriderMagazine</Text> and <Text style={styles.inline}>{post.nofLikes}</Text> others</Text>
 
-        <Text style={styles.txt}>
+        <Text style={styles.txt} numberOfLines={3}>
           <Text style={styles.inline}>{post.user.username}</Text>{' '}
           {post.description}
         </Text>

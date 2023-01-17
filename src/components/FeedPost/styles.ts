@@ -3,6 +3,9 @@ import colors from '../../theme/colors';
 import fonts from '../../theme/fonts';
 
 export default StyleSheet.create({
+  postC: {
+
+  },
   header: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -1,0 +1,126 @@
+[
+  {
+    "id": "1",
+    "createdAt": "19 December 2021",
+    "image": "https://images.pexels.com/photos/14401426/pexels-photo-14401426.jpeg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
+    "user": {
+      "id": "u1",
+      "image": "https://images.pexels.com/photos/12638517/pexels-photo-12638517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "username": "Enterface, LLC"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "LowRiderMagazine"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "RoZam1990"
+        }
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "createdAt": "19 December 2021",
+    "image": "https://images.pexels.com/photos/14401463/pexels-photo-14401463.jpeg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
+    "user": {
+      "id": "u1",
+      "image": "https://images.pexels.com/photos/163077/mario-yoschi-figures-funny-163077.jpeg",
+      "username": "Chelsea_Zamora1990"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "Enterface, LLC"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "vadimnotjustdev"
+        }
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "createdAt": "19 December 2021",
+    "image": "https://images.pexels.com/photos/12316510/pexels-photo-12316510.jpeg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
+    "user": {
+      "id": "u1",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.jpg",
+      "username": "Rogelio_Zamora1990"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "Rogelio_Zamora"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "vadimnotjustdev"
+        }
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "createdAt": "19 December 2021",
+    "image": "https://images.pexels.com/photos/14070504/pexels-photo-14070504.jpeg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
+    "user": {
+      "id": "u1",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/4.jpg",
+      "username": "HAZ2023"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "vadimnotjustdev"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "vadimnotjustdev"
+        }
+      }
+    ]
+  }
+]
