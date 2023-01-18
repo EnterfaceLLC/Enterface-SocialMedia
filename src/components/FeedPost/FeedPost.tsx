@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Pressable } from 'react-native';
+
+import DoublePress from '../DoublePress';
 
 import Comment from '../Comment';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -17,7 +19,27 @@ interface IFeedPost {
 
 
 const FeedPost = ({ post }: IFeedPost) => {
-  // console.log(post);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const toggleExpanded = () => {
+    setIsExpanded(v => !v);
+  };
+
+  const toggleLiked = () => {
+    setIsLiked(h => !h);
+  };
+
+  let lastTap = 0;
+  const handleDoublePress = () => {
+    const now = Date.now(); //TIMESTAMP
+    if (now - lastTap < 300) {
+      toggleLiked();
+    }
+
+    lastTap = now;
+  };
+
   return (
     <View style={styles.postC}>
       {/* HEADER */}
@@ -31,20 +53,24 @@ const FeedPost = ({ post }: IFeedPost) => {
       </View>
 
       {/* CONTENT */}
-      <Image
-        style={styles.img}
-        source={{ uri: post.image }}
-      />
+      <DoublePress onDoublePressable={toggleLiked}>
+        <Image
+          style={styles.img}
+          source={{ uri: post.image }}
+        />
+      </DoublePress>
 
       {/* FOOTER*/}
       <View style={styles.footer}>
         <View style={styles.footerIcons}>
-          <Ionicons
-            name={'heart-circle-outline'}
-            size={27}
-            color={colors.tertairy}
-            style={styles.icons}
-          />
+          <Pressable onPress={toggleLiked}>
+            <Ionicons
+              name={isLiked ? 'heart-circle-outline' : 'heart-circle'}
+              size={27}
+              color={isLiked ? colors.tertairy : colors.secondary}
+              style={styles.icons}
+            />
+          </Pressable>
 
           <Ionicons
             name='chatbubble-ellipses-outline'
@@ -70,10 +96,11 @@ const FeedPost = ({ post }: IFeedPost) => {
 
         <Text style={styles.txt}> Liked by <Text style={styles.inline}>@LowriderMagazine</Text> and <Text style={styles.inline}>{post.nofLikes}</Text> others</Text>
 
-        <Text style={styles.txt} numberOfLines={3}>
+        <Text style={styles.txt} numberOfLines={isExpanded ? 0 : 3}>
           <Text style={styles.inline}>{post.user.username}</Text>{' '}
           {post.description}
         </Text>
+        <Text onPress={toggleExpanded}>{isExpanded ? 'Less' : 'More'}</Text>
 
         <Text>View all {post.nofComments} comments</Text>
         {post.comments.map(comment => (
