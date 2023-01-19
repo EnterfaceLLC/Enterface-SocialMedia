@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Text, View, Image, Pressable } from 'react-native';
 
 import DoublePress from '../DoublePress';
+import Carousel from '../Carousel';
 
 import Comment from '../Comment';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -40,6 +41,16 @@ const FeedPost = ({ post }: IFeedPost) => {
     lastTap = now;
   };
 
+  let content = null;
+  if (post.image) {
+    content = (<Image
+      style={styles.img}
+      source={{ uri: post.image }} />
+    );
+  } else if (post.images) {
+    content = <Carousel images={post.images} />;
+  }
+
   return (
     <View style={styles.postC}>
       {/* HEADER */}
@@ -54,10 +65,7 @@ const FeedPost = ({ post }: IFeedPost) => {
 
       {/* CONTENT */}
       <DoublePress onDoublePressable={toggleLiked}>
-        <Image
-          style={styles.img}
-          source={{ uri: post.image }}
-        />
+        {content}
       </DoublePress>
 
       {/* FOOTER*/}

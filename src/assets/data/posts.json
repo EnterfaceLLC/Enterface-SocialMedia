@@ -2,7 +2,10 @@
   {
     "id": "1",
     "createdAt": "19 December 2021",
-    "image": "https://images.pexels.com/photos/14401426/pexels-photo-14401426.jpeg",
+    "images": [
+      "https://images.pexels.com/photos/14401426/pexels-photo-14401426.jpeg",
+      "https://images.pexels.com/photos/242138/pexels-photo-242138.jpeg"
+    ],
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
     "user": {
       "id": "u1",
