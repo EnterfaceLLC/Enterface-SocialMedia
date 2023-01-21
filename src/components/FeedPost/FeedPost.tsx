@@ -3,6 +3,7 @@ import { Text, View, Image, Pressable } from 'react-native';
 
 import DoublePress from '../DoublePress';
 import Carousel from '../Carousel';
+import VideoPlayer from '../VideoPlayer';
 
 import Comment from '../Comment';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -16,10 +17,11 @@ import { IPost } from '../../types/models';
 
 interface IFeedPost {
   post: IPost;
+  isVisible: boolean;
 };
 
 
-const FeedPost = ({ post }: IFeedPost) => {
+const FeedPost = ({ post, isVisible }: IFeedPost) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -53,6 +55,12 @@ const FeedPost = ({ post }: IFeedPost) => {
     );
   } else if (post.images) {
     content = <Carousel images={post.images} onDoublePress={toggleLiked} />;
+  } else if (post.video) {
+    content = (
+      <DoublePress onDoublePressable={toggleLiked}>
+        <VideoPlayer uri={post.video} paused={!isVisible} />
+      </DoublePress>
+    );
   }
 
   return (
