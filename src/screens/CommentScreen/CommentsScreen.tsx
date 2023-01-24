@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Image } from 'react-native';
 import React from 'react';
 
 import Comment from '../../components/Comment';
@@ -14,6 +14,7 @@ const CommentsScreen = () => {
         renderItem={({ item }) => <Comment comment={item} includeDetails />}
       />
       <Input />
+
     </View>
   )
 }
