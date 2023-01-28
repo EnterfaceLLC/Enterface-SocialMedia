@@ -29,7 +29,6 @@ export default StyleSheet.create({
     width: 75,
   },
   input: {
-    flex: 1,
     borderBottomWidth: 1,
     borderColor: colors.primary
   },
