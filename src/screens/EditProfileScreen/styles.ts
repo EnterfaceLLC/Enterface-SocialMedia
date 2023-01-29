@@ -16,7 +16,7 @@ export default StyleSheet.create({
   },
   buttonTxt: {
     color: colors.primary,
-    fontSize: fonts.size.section,
+    fontSize: fonts.size.body,
     fontWeight: fonts.weight.semi,
     margin: 10
   },
