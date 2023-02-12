@@ -14,6 +14,7 @@ import styles from './styles';
 import colors from '../../theme/colors';
 
 import { IPost } from '../../types/models';
+import { useNavigation } from '@react-navigation/native';
 
 interface IFeedPost {
   post: IPost;
@@ -24,6 +25,13 @@ interface IFeedPost {
 const FeedPost = ({ post, isVisible }: IFeedPost) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
+
+  const navigation = useNavigation();
+
+  const navigateToUser = () => {
+    navigation.navigate('Profile', { userId: post.user.id });
+  };
+
 
   const toggleExpanded = () => {
     setIsExpanded(v => !v);
@@ -71,7 +79,7 @@ const FeedPost = ({ post, isVisible }: IFeedPost) => {
           style={styles.avatar}
           source={{ uri: post.user.image, }}
         />
-        <Text style={styles.username}>{post.user.username}</Text>
+        <Text onPress={navigateToUser} style={styles.username}>{post.user.username}</Text>
         <Entypo name='dots-three-horizontal' style={styles.dots} size={24} />
       </View>
 
