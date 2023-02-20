@@ -1,12 +1,21 @@
+import { Image } from 'react-native';
+
+//* NAVIGATION \\
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+//* SCREENS \\
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
+//* TYPES \\
+import { HomeStackNavigatorParamList } from './types';
+
+//* STYLES, ICONS, ASSETS \\
 import logo from '../assets/images/insta.png';
-import { Image } from 'react-native';
 
-const HomeStack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator<HomeStackNavigatorParamList>();
 
+//* CODE BELOW \\
 const HomeStackNavigator = () => {
   return (
     <HomeStack.Navigator>

@@ -1,18 +1,24 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+//* SCREENS \\
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import PostUploadScreen from "../screens/PostUploadScreen";
-import ProfileScreen from "../screens/ProfileScreen";
 
+//* STYLES, ICONS \\
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import colors from "../theme/colors";
 
+//* NAVIGATION \\
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStackNavigator from "./HomeStackNavigator";
 import ProfileStackNavigator from "./ProfileStackNavigator";
 
-const Tab = createBottomTabNavigator();
+//* TYPES \\
+import { BottomTabNavigatorParamList } from "./types";
 
+const Tab = createBottomTabNavigator<BottomTabNavigatorParamList>();
+
+//* CODE BELOW \\
 const BottomNavigator = () => {
   return (
     <Tab.Navigator

@@ -1,16 +1,20 @@
+import React from 'react';
+
+//* NAVIGATION \\
 import { NavigationContainer } from '@react-navigation/native';
-import React from 'react'
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen';
-
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import BottomNavigator from './BottomTabNavigator';
+
+//* TYPES \\
+import { RootNavigatorParamList } from './types';
+
+//* SCREENS \\
 import CommentScreen from '../screens/CommentScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootNavigatorParamList>();
 
+
+//* CODE BELOW \\
 const Navigation = () => {
   return (
     <NavigationContainer>

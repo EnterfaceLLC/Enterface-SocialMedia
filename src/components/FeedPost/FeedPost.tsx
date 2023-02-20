@@ -1,19 +1,24 @@
 import { useState } from 'react';
 import { Text, View, Image, Pressable } from 'react-native';
 
+//* COMPONENTS \\
 import DoublePress from '../DoublePress';
 import Carousel from '../Carousel';
 import VideoPlayer from '../VideoPlayer';
-
 import Comment from '../Comment';
+
+//* STYLES, ICONS, ASSETS, THEME \\
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-
 import styles from './styles';
 import colors from '../../theme/colors';
 
+//* TYPES, MODELS \\
 import { IPost } from '../../types/models';
+import { FeedNavigationProp } from '../../navigation/types';
+
+//* NAVIGATION \\
 import { useNavigation } from '@react-navigation/native';
 
 interface IFeedPost {
@@ -21,12 +26,12 @@ interface IFeedPost {
   isVisible: boolean;
 };
 
-
+//* CODE BELOW \\
 const FeedPost = ({ post, isVisible }: IFeedPost) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<FeedNavigationProp>();
 
   const navigateToUser = () => {
     navigation.navigate('Profile', { userId: post.user.id });

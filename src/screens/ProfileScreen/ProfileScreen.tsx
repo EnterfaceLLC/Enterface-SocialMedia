@@ -1,19 +1,27 @@
-import { View, Text, Image, FlatList } from 'react-native';
+import React from 'react';
 import { useRoute, useNavigation } from '@react-navigation/native';
 
-import React from 'react';
+//* STYLES, ICONS, ASSETS, THEME \\
 import user from '../../assets/data/user.json';
-import styles from './styles';
-import Button from '../../components/Button';
 
-import ProfileHeader from './ProfileHeader';
+//* COMPONENTS \\
 import FeedGridView from '../../components/FeedGridView/FeedGridView';
+import ProfileHeader from './ProfileHeader';
+
+//* TYPES \\
+import {
+  MyProfileNavigationProp,
+  UserProfileNavigationProp,
+  MyProfileRouteProp,
+  UserProfileRouteProp
+} from '../../navigation/types';
 
 
-
+//* CODE BELOW \\
 const ProfileScreen = () => {
-  const route = useRoute();
-  const navigation = useNavigation();
+  const route = useRoute<UserProfileRouteProp | MyProfileRouteProp>();
+
+  const navigation = useNavigation<UserProfileNavigationProp | MyProfileNavigationProp>();
 
   const userId = route.params?.userId;
 

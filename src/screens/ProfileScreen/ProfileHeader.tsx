@@ -1,13 +1,22 @@
-import { View, Text, Image, FlatList } from 'react-native'
 import React from 'react';
+import { View, Text, Image } from 'react-native'
+
+//* STYLES, ICONS, ASSETS, THEME \\
 import user from '../../assets/data/user.json';
 import styles from './styles';
+
+//* COMPONENTS \\
 import Button from '../../components/Button';
+
+//* NAVIGATION \\
 import { useNavigation } from '@react-navigation/native';
 
+//* TYPES \\
+import { ProfileNavigationProp } from '../../navigation/types';
 
+//* CODE BELOW \\
 const ProfileHeader = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<ProfileNavigationProp>();
 
   return (
     <View style={styles.root}>
