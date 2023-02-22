@@ -1,7 +1,7 @@
 import React from 'react';
 
 //* NAVIGATION \\
-import { NavigationContainer } from '@react-navigation/native';
+import { LinkingOptions, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomNavigator from './BottomTabNavigator';
 
@@ -13,11 +13,30 @@ import CommentScreen from '../screens/CommentScreen';
 
 const Stack = createNativeStackNavigator<RootNavigatorParamList>();
 
+const linking: LinkingOptions<RootNavigatorParamList> = {
+  prefixes: ['enterfacesm://', 'https://enterfacesm.com'],
+  config: {
+    initialRouteName: 'Home',
+    screens: {
+      Comments: 'comments',
+      Home: {
+        screens: {
+          HomeStack: {
+            initialRouteName: 'Feed',
+            screens: {
+              Profile: 'user/:userId'
+            }
+          }
+        }
+      }
+    },
+  }
+}
 
 //* CODE BELOW \\
 const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       <Stack.Navigator initialRouteName='Home' >
         <Stack.Screen
           name='Home'

@@ -1,5 +1,4 @@
 //* SCREENS \\
-import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import PostUploadScreen from "../screens/PostUploadScreen";
 
 //* STYLES, ICONS \\
@@ -15,6 +14,7 @@ import ProfileStackNavigator from "./ProfileStackNavigator";
 
 //* TYPES \\
 import { BottomTabNavigatorParamList } from "./types";
+import SearchTabNavigator from "./SearchTabNavigator";
 
 const Tab = createBottomTabNavigator<BottomTabNavigatorParamList>();
 
@@ -44,8 +44,9 @@ const BottomNavigator = () => {
       />
       <Tab.Screen
         name="Search"
-        component={HomeScreen}
+        component={SearchTabNavigator}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons
               name="search"
