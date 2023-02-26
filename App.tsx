@@ -1,11 +1,9 @@
-import { StyleSheet, View } from 'react-native';
-// import HomeScreen from './src/screens/HomeScreen/HomeScreen';
-// import CommentScreen from './src/screens/CommentScreen';
-// import ProfileScreen from './src/screens/ProfileScreen/ProfileScreen';
-// import EditProfileScreen from './src/screens/EditProfileScreen';
-// import PostUploadScreen from './src/screens/PostUploadScreen';
+import { Amplify } from 'aws-amplify';
+import config from './src/aws-exports';
 
 import Navigation from './src/navigation';
+
+Amplify.configure(config);
 
 
 const App = () => {
