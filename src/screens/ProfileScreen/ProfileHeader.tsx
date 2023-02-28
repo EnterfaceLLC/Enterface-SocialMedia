@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native'
 
+import { Auth } from 'aws-amplify';
+
 //* STYLES, ICONS, ASSETS, THEME \\
 import user from '../../assets/data/user.json';
 import styles from './styles';
@@ -12,7 +14,7 @@ import Button from '../../components/Button';
 import { useNavigation } from '@react-navigation/native';
 
 //* TYPES \\
-import { ProfileNavigationProp } from '../../navigation/types';
+import { ProfileNavigationProp } from '../../types/navigation';
 
 //* CODE BELOW \\
 const ProfileHeader = () => {
@@ -53,8 +55,8 @@ const ProfileHeader = () => {
         />
 
         <Button
-          text={'Go Back'}
-          onPress={() => navigation.goBack()}
+          text={'Log Out'}
+          onPress={() => Auth.signOut()}
         />
       </View>
     </View>

@@ -10,6 +10,11 @@
       "StackName": "amplify-enterfacesm-staging-173727",
       "StackId": "arn:aws:cloudformation:us-east-2:638558189245:stack/amplify-enterfacesm-staging-173727/3d43c130-b5fc-11ed-a271-02351ae6ebce",
       "AmplifyAppId": "d2tmmvuqgngt00"
+    },
+    "categories": {
+      "auth": {
+        "EnterfaceSM": {}
+      }
     }
   }
 }

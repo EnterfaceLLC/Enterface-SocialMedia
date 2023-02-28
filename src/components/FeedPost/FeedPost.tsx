@@ -16,7 +16,7 @@ import colors from '../../theme/colors';
 
 //* TYPES, MODELS \\
 import { IPost } from '../../types/models';
-import { FeedNavigationProp } from '../../navigation/types';
+import { FeedNavigationProp } from '../../types/navigation';
 
 //* NAVIGATION \\
 import { useNavigation } from '@react-navigation/native';

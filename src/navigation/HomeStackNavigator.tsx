@@ -8,7 +8,7 @@ import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
 //* TYPES \\
-import { HomeStackNavigatorParamList } from './types';
+import { HomeStackNavigatorParamList } from '../types/navigation';
 
 //* STYLES, ICONS, ASSETS \\
 import logo from '../assets/images/insta.png';

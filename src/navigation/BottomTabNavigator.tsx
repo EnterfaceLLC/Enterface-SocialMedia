@@ -13,7 +13,7 @@ import HomeStackNavigator from "./HomeStackNavigator";
 import ProfileStackNavigator from "./ProfileStackNavigator";
 
 //* TYPES \\
-import { BottomTabNavigatorParamList } from "./types";
+import { BottomTabNavigatorParamList } from "../types/navigation";
 import SearchTabNavigator from "./SearchTabNavigator";
 
 const Tab = createBottomTabNavigator<BottomTabNavigatorParamList>();

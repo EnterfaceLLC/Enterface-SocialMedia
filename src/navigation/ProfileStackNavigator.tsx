@@ -6,7 +6,7 @@ import ProfileScreen from "../screens/ProfileScreen";
 import EditProfileScreen from "../screens/EditProfileScreen";
 
 //* TYPES \\
-import { ProfileStackNavigatorParamList } from "./types";
+import { ProfileStackNavigatorParamList } from "../types/navigation";
 
 const Stack = createNativeStackNavigator<ProfileStackNavigatorParamList>();
 

@@ -14,7 +14,7 @@ import {
   UserProfileNavigationProp,
   MyProfileRouteProp,
   UserProfileRouteProp
-} from '../../navigation/types';
+} from '../../types/navigation';
 
 
 //* CODE BELOW \\
