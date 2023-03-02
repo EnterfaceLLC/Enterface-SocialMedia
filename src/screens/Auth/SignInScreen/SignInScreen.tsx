@@ -27,7 +27,7 @@ const SignInScreen = () => {
   const navigation = useNavigation<SignInNavigationProp>();
   const [loading, setLoading] = useState(false);
 
-  const { setUser } = useAuthContext();
+  // const { setUser } = useAuthContext();
 
   const { control, handleSubmit, reset } = useForm<SignInData>();
 
@@ -37,8 +37,7 @@ const SignInScreen = () => {
     }
     setLoading(true);
     try {
-      const cognitoUser = await Auth.signIn(email, password);
-      setUser(cognitoUser);
+      await Auth.signIn(email, password);
       //* SAVE USER DATA IN CONTEXT\\
     } catch (err) {
       if ((err as Error).name === 'UserNotConfirmedException') {
