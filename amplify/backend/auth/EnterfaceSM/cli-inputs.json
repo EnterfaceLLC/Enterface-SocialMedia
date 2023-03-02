@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "enterfde655ad5",
+    "resourceNameTruncated": "enterf04223587",
     "userPoolName": "EnterfaceSM",
     "autoVerifiedAttributes": [
       "email"
@@ -15,27 +15,28 @@
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Verification code: {####}",
-    "emailVerificationMessage": "Verification code: {####} \n\nEnterface, LLC",
+    "emailVerificationMessage": "Verification code: {####}\n\n2023 | Enterface, LLC ",
     "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [
-      "Requires Lowercase"
-    ],
+    "passwordPolicyMinLength": 6,
+    "passwordPolicyCharacters": [],
     "requiredAttributes": [
-      "email",
-      "name"
+      "name",
+      "email"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "Enterfde655ad5_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "Enterf04223587_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "de655ad5",
+    "sharedId": "04223587",
     "resourceName": "EnterfaceSM",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
+    "usernameAttributes": [
+      "email"
+    ],
     "useDefault": "manual",
     "userPoolGroups": false,
     "userPoolGroupList": [],

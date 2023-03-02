@@ -12,12 +12,11 @@ import { Auth } from 'aws-amplify';
 const EMAIL_REGEX =
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-const USERNAME_REGEX = /^[a-zA-Z0-9_]*$/; // alphanumeric and underscore
+// const USERNAME_REGEX = /^[a-zA-Z0-9_]*$/; // alphanumeric and underscore
 
 type SignUpData = {
   name: string;
   email: string;
-  username: string;
   password: string;
   passwordRepeat: string;
 };
@@ -28,16 +27,16 @@ const SignUpScreen = () => {
   const navigation = useNavigation<SignUpNavigationProp>();
   const [loading, setLoading] = useState(false);
 
-  const onRegisterPressed = async ({ name, email, username, password }: SignUpData) => {
+  const onRegisterPressed = async ({ name, email, password }: SignUpData) => {
     if (loading) {
       return;
     }
     setLoading(true);
 
     try {
-      await Auth.signUp({ username, password, attributes: { name, email } });
+      await Auth.signUp({ username: email, password, attributes: { name, email } });
 
-      navigation.navigate('Confirm email', { username });
+      navigation.navigate('Confirm email', { email });
     } catch (err) {
       Alert.alert('Oops', (err as Error).message)
     } finally {
@@ -80,7 +79,7 @@ const SignUpScreen = () => {
           }}
         />
 
-        <FormInput
+        {/* <FormInput
           name="username"
           control={control}
           placeholder="Username"
@@ -99,7 +98,7 @@ const SignUpScreen = () => {
               message: 'Username can only contain a-z, 0-9, _',
             },
           }}
-        />
+        /> */}
         <FormInput
           name="email"
           control={control}
