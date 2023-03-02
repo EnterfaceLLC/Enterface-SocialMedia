@@ -7,7 +7,8 @@ const colors = {
   black: '#000',
   grey: '#999',
   lightgrey: '#cccc',
-  green: '#78c091'
+  green: '#78c091',
+  warning: '#E1BC66'
 
 };
 
