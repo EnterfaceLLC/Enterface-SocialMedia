@@ -5,6 +5,8 @@ import AuthContextProvider from './src/contexts/AuthContext';
 import Navigation from './src/navigation';
 
 Amplify.configure(config);
+console.log('See Config')
+console.log(config);
 
 
 const App = () => {

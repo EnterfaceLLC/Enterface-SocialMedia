@@ -9,11 +9,18 @@
       "UnauthRoleName": "amplify-enterfacesm-staging-173727-unauthRole",
       "StackName": "amplify-enterfacesm-staging-173727",
       "StackId": "arn:aws:cloudformation:us-east-2:638558189245:stack/amplify-enterfacesm-staging-173727/3d43c130-b5fc-11ed-a271-02351ae6ebce",
-      "AmplifyAppId": "d2tmmvuqgngt00"
+      "AmplifyAppId": "d2tmmvuqgngt00",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-enterfacesm-staging-173727-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
         "EnterfaceSM": {}
+      },
+      "function": {
+        "EnterfaceSMPostConfirmation": {
+          "deploymentBucketName": "amplify-enterfacesm-staging-173727-deployment",
+          "s3Key": "amplify-builds/EnterfaceSMPostConfirmation-4661764f435433442b6c-build.zip"
+        }
       }
     }
   }
