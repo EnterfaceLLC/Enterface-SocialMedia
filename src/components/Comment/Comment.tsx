@@ -2,11 +2,13 @@ import { View, Text, Image, Pressable } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import colors from '../../theme/colors';
-import { IComment } from '../../types/models';
+// import { IComment } from '../../types/models';
 import { useState } from 'react';
+import { Comment as CommentType } from '../../API';
+import { DEFAULT_USER_IMAGE } from '../../config';
 
 interface ICommentProps {
-  comment: IComment;
+  comment: CommentType;
   includeDetails: boolean;
 }
 
@@ -20,10 +22,10 @@ const Comment = ({ comment, includeDetails = false }: ICommentProps) => {
 
   return (
     <View style={styles.comments}>
-      {(includeDetails && <Image source={{ uri: comment.user.image }} style={styles.avatar} />)}
+      {(includeDetails && <Image source={{ uri: comment.User?.image || DEFAULT_USER_IMAGE }} style={styles.avatar} />)}
       <View style={styles.midColumn}>
         <Text style={styles.commentsTxt}>
-          <Text style={styles.inline}>{comment.user.username}</Text>{' '}
+          <Text style={styles.inline}>{comment.User?.username}</Text>{' '}
           {comment.comment}
         </Text>
 

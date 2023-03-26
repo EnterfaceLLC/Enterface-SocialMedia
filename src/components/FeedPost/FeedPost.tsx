@@ -15,14 +15,18 @@ import styles from './styles';
 import colors from '../../theme/colors';
 
 //* TYPES, MODELS \\
-import { IPost } from '../../types/models';
+// import { IPost } from '../../types/models';
 import { FeedNavigationProp } from '../../types/navigation';
 
 //* NAVIGATION \\
 import { useNavigation } from '@react-navigation/native';
 
+//* API IMPORT \\
+import { Post } from '../../API';
+import { DEFAULT_USER_IMAGE } from '../../config';
+
 interface IFeedPost {
-  post: IPost;
+  post: Post;
   isVisible: boolean;
 };
 
@@ -34,7 +38,8 @@ const FeedPost = ({ post, isVisible }: IFeedPost) => {
   const navigation = useNavigation<FeedNavigationProp>();
 
   const navigateToUser = () => {
-    navigation.navigate('Profile', { userId: post.user.id });
+    if (post.User)
+      navigation.navigate('Profile', { userId: post.User.id });
   };
 
   const navigateToComments = () => {
@@ -86,9 +91,9 @@ const FeedPost = ({ post, isVisible }: IFeedPost) => {
       <View style={styles.header}>
         <Image
           style={styles.avatar}
-          source={{ uri: post.user.image, }}
+          source={{ uri: post.User?.image || DEFAULT_USER_IMAGE }}
         />
-        <Text onPress={navigateToUser} style={styles.username}>{post.user.username}</Text>
+        <Text onPress={navigateToUser} style={styles.username}>{post.User?.username}</Text>
         <Entypo name='dots-three-horizontal' style={styles.dots} size={24} />
       </View>
 
@@ -133,14 +138,14 @@ const FeedPost = ({ post, isVisible }: IFeedPost) => {
         <Text style={styles.txt}> Liked by <Text style={styles.inline}>@LowriderMagazine</Text> and <Text style={styles.inline}>{post.nofLikes}</Text> others</Text>
 
         <Text style={styles.txt} numberOfLines={isExpanded ? 0 : 3}>
-          <Text style={styles.inline}>{post.user.username}</Text>{' '}
+          <Text style={styles.inline}>{post.User?.username}</Text>{' '}
           {post.description}
         </Text>
         <Text onPress={toggleExpanded}>{isExpanded ? 'Less' : 'More'}</Text>
 
         <Text onPress={navigateToComments}>View all {post.nofComments} comments</Text>
-        {post.comments.map(comment => (
-          <Comment key={comment.id} comment={comment} />
+        {(post.Comments?.items || []).map(comment => (
+          comment && <Comment key={comment.id} comment={comment} />
         ))}
 
         <Text>{post.createdAt}</Text>

@@ -21,6 +21,9 @@
           "deploymentBucketName": "amplify-enterfacesm-staging-173727-deployment",
           "s3Key": "amplify-builds/EnterfaceSMPostConfirmation-4661764f435433442b6c-build.zip"
         }
+      },
+      "api": {
+        "EnterfaceSM": {}
       }
     }
   }
